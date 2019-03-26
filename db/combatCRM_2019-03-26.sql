@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.24)
 # Database: combatCRM
-# Generation Time: 2019-03-26 00:46:50 +0000
+# Generation Time: 2019-03-26 01:04:41 +0000
 # ************************************************************
 
 
@@ -33,20 +33,20 @@ CREATE TABLE `clue` (
   `create_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
   `user_id` int(11) DEFAULT NULL COMMENT '跟踪销售',
   `status` varchar(255) DEFAULT NULL COMMENT '状态',
+  `comment` text COMMENT '备注',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 
-# Dump of table clue_track
+# Dump of table clue_record
 # ------------------------------------------------------------
 
-DROP TABLE IF EXISTS `clue_track`;
+DROP TABLE IF EXISTS `clue_record`;
 
-CREATE TABLE `clue_track` (
+CREATE TABLE `clue_record` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `content` text COMMENT '内容',
-  `comment` text COMMENT '备注',
   `clue_id` int(11) DEFAULT NULL COMMENT '线索id',
   `created_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
   PRIMARY KEY (`id`)

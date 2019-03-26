@@ -1,0 +1,58 @@
+.container{
+  height: 100%;
+}
+.create-container{
+  margin:20px 0;
+}
+.create-content{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #e4e4e4;
+}
+.create-content .create-back{
+  line-height: 75px;
+  font-size: 16px;
+  color:#999;
+
+}
+.create-back a{
+  text-decoration: none;
+  color:#999;
+}
+.create-input{
+  margin-top:35px;
+}
+.input-item{
+  margin-bottom: 30px;
+}
+.input-item .name{
+  font-size: 26px;
+}
+.input-item .input-content{
+  padding-left:15px;
+  width: 500px;
+  height: 35px;
+  line-height: 35px;
+  outline: none;
+}
+.save-item{
+  width: 500px;
+  margin-left:65px;
+}
+.save-buttom{
+  width:100%;
+  height: 35px;
+  line-height:35px;
+  background-color: #e4e4e4;
+  font-size:18px;
+  outline: none;
+}
+
+
+
+
+
+
+
+
+
