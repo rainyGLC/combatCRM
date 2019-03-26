@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.24)
 # Database: combatCRM
-# Generation Time: 2019-03-26 00:39:20 +0000
+# Generation Time: 2019-03-26 00:46:50 +0000
 # ************************************************************
 
 
@@ -33,6 +33,39 @@ CREATE TABLE `clue` (
   `create_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
   `user_id` int(11) DEFAULT NULL COMMENT '跟踪销售',
   `status` varchar(255) DEFAULT NULL COMMENT '状态',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+# Dump of table clue_track
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `clue_track`;
+
+CREATE TABLE `clue_track` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `content` text COMMENT '内容',
+  `comment` text COMMENT '备注',
+  `clue_id` int(11) DEFAULT NULL COMMENT '线索id',
+  `created_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+# Dump of table user
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `user`;
+
+CREATE TABLE `user` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL DEFAULT '' COMMENT '姓名',
+  `phone` varchar(255) NOT NULL DEFAULT '' COMMENT '电话',
+  `password` varchar(255) DEFAULT NULL COMMENT '密码',
+  `role` int(11) DEFAULT NULL COMMENT '角色',
+  `create_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
