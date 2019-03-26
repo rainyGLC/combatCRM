@@ -1,4 +1,4 @@
-{% extends './../users_layout.tpl' %}
+{% extends './../admin_layout.tpl' %}
 
 {% block css %}
 <link rel="stylesheet" href="/stylesheets/layout.css">
@@ -14,7 +14,7 @@
   <div class="record-container">
     <div class="record-content">
       <h2 class="record-title">跟踪线索</h2>
-      <span class="record-back"><a href="/users/clue">返回线索列表</a></span>
+      <span class="record-back"><a href="/admin/clue">返回线索列表</a></span>
     </div>
     <div class="record-comment">
       <div class="record-show">

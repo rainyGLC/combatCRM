@@ -1,4 +1,4 @@
-{% extends './../users_layout.tpl' %}
+{% extends './../admin_layout.tpl' %}
 
 {% block css %}
 <link rel="stylesheet" href="/stylesheets/layout.css">
@@ -15,7 +15,7 @@
   <div class="admin-container">
     <div class="personnel-container">
       <h2 class="personnel-title">人员管理</h2>
-      <span class="personnel-add"><a href="/users/user_create">新增人员>></a></span>
+      <span class="personnel-add"><a href="/admin/user_create">新增人员>></a></span>
     </div>
     <div class="personnel-list">
       <table class="table table-bordered">
@@ -29,20 +29,15 @@
           </tr>
         </thead>
         <tbody>
+          {% for val in users %}
           <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td><a href="/users/user_edit">编辑</a></td>
+            <th scope="row">{{val.name}}</th>
+            <td>{{val.phone}}</td>
+            <td>{{val.role}}</td>
+            <td>{{val.create_time_display}}</td>
+            <td><a href="/admin/user/{{val.id}}/edit">编辑</a></td>
           </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td>编辑</td>
-          </tr>
+          {% endfor %}
         </tbody>
       </table>   
     </div>

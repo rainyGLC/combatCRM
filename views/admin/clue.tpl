@@ -1,4 +1,4 @@
-{% extends './../users_layout.tpl' %}
+{% extends './../admin_layout.tpl' %}
 
 {% block css %}
 <link rel="stylesheet" href="/stylesheets/layout.css">
@@ -46,7 +46,7 @@
             <td>@fat</td>
             <td>编辑</td>
             <td>编辑</td>
-            <td><a href="/users/clue/clue_record">跟踪</a></td>
+            <td><a href="/admin/clue/clue_record">跟踪</a></td>
           </tr>
         </tbody>
       </table> 

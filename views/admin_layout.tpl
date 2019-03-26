@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="wapper">
-  {% block header %}
+  <!-- {% block header %} -->
   <header class="page-header">
     <div class="header-logo"></div>
     <div class="header-title">汽车销售管理系统</div>
@@ -18,12 +18,12 @@
       <a class="leave">退出</a>
     </div>
   </header>
-  {% endblock %}
+ <!--  {% endblock %} -->
   <div class="page-main">
     <div class="page-aside">
       <nav class="nav-list">
-        <li class="nav-item"><a href="/users">人员管理</a></li>
-        <li class="nav-item"><a href="/users/clue">线索管理</a></li>
+        <li class="nav-item"><a href="/admin/user">人员管理</a></li>
+        <li class="nav-item"><a href="/admin/clue">线索管理</a></li>
       </nav>
     </div>
     <div class="page-content">

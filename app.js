@@ -5,8 +5,9 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var nunjucks = require('nunjucks');
 var favicon = require('serve-favicon');
+var session      = require('express-session');
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var adminRouter = require('./routes/admin');
 var apiRouter = require('./routes/api');
 
 var app = express();
@@ -19,6 +20,14 @@ nunjucks.configure('views', {
   watch: true
 });
 
+// Use the session middleware
+app.use(session({
+  secret: 'rainy',
+  resave: true,
+  saveUninitialized: true,
+}))
+
+
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 
 app.use(logger('dev'));
@@ -28,7 +37,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/',usersRouter)
+app.use('/',adminRouter)
 app.use('/api', apiRouter);
 
 // catch 404 and forward to error handler

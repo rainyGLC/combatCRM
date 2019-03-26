@@ -28,7 +28,7 @@
 .input-item .name{
   font-size: 26px;
 }
-.input-item .input-content{
+.input-content, .input-phone, .input-password, .input-role{
   padding-left:15px;
   width: 500px;
   height: 35px;
