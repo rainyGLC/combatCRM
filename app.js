@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var nunjucks = require('nunjucks');
 var favicon = require('serve-favicon');
-var session      = require('express-session');
+var filters = require('./filters/index')
 var indexRouter = require('./routes/index');
 var adminRouter = require('./routes/admin');
 var apiRouter = require('./routes/api');
@@ -20,13 +20,6 @@ nunjucks.configure('views', {
   watch: true
 });
 
-// Use the session middleware
-app.use(session({
-  secret: 'rainy',
-  resave: true,
-  saveUninitialized: true,
-}))
-
 
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 
@@ -36,6 +29,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+filters(app);
 app.use('/', indexRouter);
 app.use('/',adminRouter)
 app.use('/api', apiRouter);

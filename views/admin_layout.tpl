@@ -15,7 +15,7 @@
     <div class="header-title">汽车销售管理系统</div>
     <div class="header-aside">
       <span class="roleName">管理员</span>
-      <a class="leave">退出</a>
+      <a href="/admin/login" class="leave">退出</a>
     </div>
   </header>
  <!--  {% endblock %} -->

@@ -37,7 +37,7 @@
         <span class="name">角色:</span>
         <select class="input-role">
           <option value="0">请选择角色</option>
-          <option value="1" {% if user.role==1 %} selected {% endif %} >管理员</option>
+          <option value="1" {% if user.role==1 %} selected {% endif %}>管理员</option>
           <option value="2" {% if user.role==2 %} selected {% endif %}>销售</option>
         </select>
       </div>

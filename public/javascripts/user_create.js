@@ -19,7 +19,6 @@ const PAGE={
       data:{name,phone,password,role},
       type:'POST',
       success:function(data){
-        console.log(data);
         if(data.code==200){
           alert('新增成功')
         }else{

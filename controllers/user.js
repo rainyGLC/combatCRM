@@ -1,6 +1,6 @@
 const UserModel = require('./../models/user.js');
 const User = new UserModel;
-const {formatTime} = require('./../utils/data.js');
+const {formatTime} = require('./../utils/formatTime.js');
 
 const userController ={
   insert:async function(req,res,next){
@@ -9,7 +9,6 @@ const userController ={
     let password = req.body.password;
     let role = req.body.role;
     let create_time=new Date();
-    console.log(create_time);
     if(!name || !phone || !password || !role){
       res.json({code:0,data:'params empty!'});
       return
@@ -22,7 +21,11 @@ const userController ={
       res.json({code:0,data:e})
     }
   },
-  show:async function(req,res,next){
+  renderUser:async function(req,res,next){
+    if(!res.locals.isLogin){
+      res.redirect('admin/login')
+      return
+    }
     try{
       const users = await User.all();
       res.locals.users=users.map((data)=>{
@@ -38,7 +41,6 @@ const userController ={
   renderEdit:async function(req,res,next){
     try{
       const id = req.params.id;
-      console.log(id);
       const users=await User.select({id});
       res.locals.user=users[0];
       res.render('admin/user_edit.tpl',res.locals);
@@ -48,8 +50,7 @@ const userController ={
     }
   },
   update:async function(req,res,next){
-    let id =req.params.id
-    console.log(id);
+    let id =req.params.id;
     let name=req.body.name;
     let phone=req.body.phone;
     let password=req.body.password;
@@ -66,7 +67,7 @@ const userController ={
       res.json({code:0,data:e})
     }
   },
-  renderPage:async function(req,res,next){
+  renderUserCreate:async function(req,res,next){
     res.render('admin/user_create.tpl',res.locals)
   }
 }
