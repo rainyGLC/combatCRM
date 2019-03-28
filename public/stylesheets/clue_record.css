@@ -36,7 +36,7 @@
   font-size: 18px;
   color: #333;
 }
-.record-staute .input-content{
+.input-content, .input-role{
   width: 500px;
   height: 45px;
   line-height: 45px;
@@ -91,7 +91,7 @@
   width: 500px;
   height: 45px;
 }
-.record-buttom .record-add{
+.record-buttom .record-buttom{
   width: 100%;
   height: 100%;
   background-color: #e4e4e4;
