@@ -14,15 +14,21 @@
     <div class="header-logo"></div>
     <div class="header-title">汽车销售管理系统</div>
     <div class="header-aside">
-      <span class="roleName">管理员</span>
-      <a href="/admin/login" class="leave">退出</a>
+      {% if userInfo.role == 1 %}
+      <span class="roleName" value="{{userInfo.role}}">{{userInfo.name}},您好！管理员</span>
+      {% else %}
+      <span class="roleName" value="{{userInfo.role}}">{{userInfo.name}},您好，欢迎您</span>
+      {% endif %}
+      <a href="/admin/outlogin" class="leave">退出</a>
     </div>
   </header>
  <!--  {% endblock %} -->
   <div class="page-main">
     <div class="page-aside">
       <nav class="nav-list">
+        {% if userInfo.role == 1 %}
         <li class="nav-item"><a href="/admin/user">人员管理</a></li>
+        {% endif %}
         <li class="nav-item"><a href="/admin/clue">线索管理</a></li>
       </nav>
     </div>

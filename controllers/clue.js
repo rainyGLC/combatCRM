@@ -27,8 +27,15 @@ const clueController ={
     }
   },
   renderClue:async function(req,res,next){
+    let user_id = res.locals.userInfo.id;
+    let role=res.locals.userInfo.role;
+    let params={};
+    if(role==2){
+      params.user_id=user_id;
+    }
     try{
-      const clues = await Clue.all();
+      // const clues = await Clue.all();
+      const clues=await Clue.joinUser(params);
       res.locals.clues= clues.map((data)=>{
         data.create_time_display = formatTime(data.create_time);
         return data
@@ -44,7 +51,7 @@ const clueController ={
       const id = req.params.id;
       const clues = await Clue.select({id});
       const record = await Record.select({clue_id:id})
-      const users = await User.all();
+      const users = await User.select({role:2});
       res.locals.clue=clues[0];
       res.locals.clue.create_time_display=formatTime(res.locals.clue.create_time);
       res.locals.users=users;

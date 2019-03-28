@@ -36,8 +36,20 @@
             <td>{{val.phone}}</td>
             <td>{{val.source}}</td>
             <td>{{val.create_time_display}}</td>
-            <td>{{val.user_id}}</td>
-            <td>{{val.status}}</td>
+            <td>{{val.role}}</td>
+            {% if val.status==1 %}
+            <td>没有意向</td>
+            {% elif val.status==2 %}
+            <td>意向一般</td>
+            {% elif val.status==3 %}
+            <td>意向强烈</td>
+            {% elif val.status==4 %}
+            <td>完成销售</td>
+            {% elif val.status==5 %}
+            <td>取消销售</td>
+            {% else %}
+            <td>-</td>
+            {% endif %}
             <td><a href="/admin/clue/{{val.id}}/clue_record">跟踪</a></td>
           </tr>
           {% endfor %}

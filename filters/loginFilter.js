@@ -4,6 +4,7 @@ module.exports=function(req,res,next){
   res.locals.userInfo={};
 
   let auth_Code=req.cookies.ac;
+  let name = req.cookies.user_name;
   if(auth_Code){
     auth_Code=authCodeFunc(auth_Code,'DECODE');
     authArr=auth_Code.split("\t");
@@ -13,7 +14,7 @@ module.exports=function(req,res,next){
     let role=authArr[3];
     res.locals.isLogin=true;
     res.locals.userInfo={
-      phone,password,id
+      phone,password,id,role,name
     }
   }
   next();

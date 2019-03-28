@@ -17,6 +17,7 @@
       <span class="record-back"><a href="/admin/clue">返回线索列表</a></span>
     </div>
     <div class="record-comment">
+      {% if userInfo.role==1 %}
       <div class="record-show">
         <div class="record-item">
           <span class="record-name">客户名称:{{clue.name}}</span>
@@ -33,7 +34,6 @@
         <div class="record-item">
           <span>创建时间:{{clue.create_time_display}}</span>
         </div>
-
         <div class="record-staute">
           <span>用户状态:</span>
           <select class="input-content">
@@ -58,24 +58,19 @@
           <span>备注:</span>
           <textarea class="remark">{{val.comment}}</textarea>
         </div>
-
         <div class="buttom-item">
           <input id="clueId" type="text" hidden value="{{clue.id}}">
           <button class="save-buttom">保存</button>
         </div>
       </div>
-
+      {% endif %}
       <div class="record-log">
         {% for val in record %}
         <div class="log-list">
           <span class="log-time">{{val.create_time_display}}</span>
           <span class="log-comment">{{val.content}}</span>
         </div>
-        {% endfor %}
-        <!-- <div class="log-list">
-          <span class="log-time">2019/03/17</span>
-          <span class="log-comment">跟踪内容</span> 
-        </div> -->     
+        {% endfor %} 
         <div class="record-add">
           <textarea class="record-remark" placeholder="跟踪内容" value=""></textarea>
         </div>
@@ -83,7 +78,6 @@
           <button class="record-buttom">添加</button>
         </div>
       </div>
-      
     </div>
   </div>
 </div>
