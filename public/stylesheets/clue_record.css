@@ -87,11 +87,11 @@
   color: #333;
   outline: none;
 }
-.record-buttom{
+.record-buttoms{
   width: 500px;
   height: 45px;
 }
-.record-buttom .record-buttom{
+.record-buttoms .record-buttom{
   width: 100%;
   height: 100%;
   background-color: #e4e4e4;

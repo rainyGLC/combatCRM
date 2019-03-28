@@ -6,15 +6,11 @@ const UserModel = require('./../models/user.js');
 const User = new UserModel;
 const {formatTime} = require('./../utils/formatTime.js');
 
-
 const clueController ={
   insert:async function(req,res,next){
     let name = req.body.name;
-    console.log(name)
     let phone = req.body.phone;
-    console.log(phone)
     let source = req.query.source;
-    console.log(source);
     if(!name || !phone){
       res.json({code:0,data:'params empty!'})
       return

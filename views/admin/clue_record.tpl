@@ -74,7 +74,7 @@
         <div class="record-add">
           <textarea class="record-remark" placeholder="跟踪内容" value=""></textarea>
         </div>
-        <div class="record-buttom">
+        <div class="record-buttoms">
           <button class="record-buttom">添加</button>
         </div>
       </div>
@@ -122,29 +122,30 @@
     },
     recordSubmit:function(){
       let content = $('.record-remark').val();
-      // console.log(content);
+      console.log(content);
       let id =$('#clueId').val();
+      console.log(id);
       if(!content){
         alert('缺少参数');
         return
       }
-      $.ajax({
-        url:'/api/clue/'+ id + '/record',
-        data:{content},
-        type:'POST',
-        success:function(data){
-          console.log(data);
-          if(data.code==200){
-            alert('添加成功')
-            location.reload();
-          }else{
-            alert(data)
-          }
-        },
-        error:function(){
-          console.log(err)
-        }
-      })
+      // $.ajax({
+      //   url:'/api/clue/'+ id + '/record',
+      //   data:{content},
+      //   type:'POST',
+      //   success:function(data){
+      //     console.log(data);
+      //     if(data.code==200){
+      //       alert('添加成功')
+      //       location.reload();
+      //     }else{
+      //       alert(data)
+      //     }
+      //   },
+      //   error:function(){
+      //     console.log(err)
+      //   }
+      // })
     }
   }
   PAGE.init();

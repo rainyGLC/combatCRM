@@ -7,9 +7,7 @@ const PAGE ={
   },
   buttonSubmit:function(){
     let phone = $('#userPhone').val();
-    // console.log(phone);
     let password=$('#userPassword').val();
-    // console.log(password);
     if(!phone || !password){
       alert('params empty!')
       return
