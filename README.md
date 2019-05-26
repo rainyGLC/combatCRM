@@ -1,7 +1,7 @@
 ### 项目名称 销售机会管理信息 
 (客户关系管理CRM:Customer Relationship Management);
 
-###项目介绍：
+### 项目介绍：
 本项目为奔驰汽车的 CRM 中的销售机会信息管理.奔驰汽车和 4A 广告公司合作做出各类精良的落地页并在各个社交、媒体平台中进行投放。需要一套承接这类落地页收集回来的用户信息，并进行跟踪、统计、反馈的管理系统。通过数据反馈出，哪个落地页有效，哪个渠道获客最多，哪个销售转化最强.
  ### 项目解读
  使用 Node.js 的 Express 框架完成用户数据的增删改查、及角色的设置。收集落地页提交的用户信息，管理员进行分配给销售，销售对客户进行跟踪。项目主要包含以下几个模块：
@@ -244,3 +244,4 @@ Knex.js是为 Postgres，MSSQL，MySQL，MariaDB，SQLite3，Oracle 和 Amazon R
 ### 启动项目
     npm install
     npm start /或node ./bin/wwww  或者 nodemon ./bin/www（监测)
+    打开http://localhost:3000/admin/login登录
